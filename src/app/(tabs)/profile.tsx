@@ -1,11 +1,13 @@
-import { Image, Text, TextInput, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import { useState } from "react";
 import Button from "~/src/components/Button";
+import TextInputs from "~/src/components/LabeledInputs";
 
 export default function ProfileScreen() {
   const [image, setImage] = useState<string | null>(null);
-  const [userName, setUserName] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
 
   const pickImage = async () => {
     // No permissions request is necessary for launching the image library
@@ -40,13 +42,20 @@ export default function ProfileScreen() {
       </Text>
 
       {/* Form */}
-      <Text className="mb-2 text-gray-500 font-semibold">Username</Text>
-      <TextInput
-        value={userName}
-        placeholder="username"
-        onChangeText={setUserName}
-        className="border border-gray-500 p-3 rounded-md"
-      />
+      <View className="gap-2">
+        <TextInputs
+          value={email}
+          setValue={setEmail}
+          placeholder="Email"
+          title="Email"
+        />
+        <TextInputs
+          value={fullName}
+          setValue={setFullName}
+          placeholder="Full name"
+          title="Full Name"
+        />
+      </View>
 
       {/* Action Buttons */}
       <View className="gap-2 mt-auto">

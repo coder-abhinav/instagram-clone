@@ -1,7 +1,30 @@
-import { View, Image, Text } from "react-native";
+import { View, Image, Text, Pressable } from "react-native";
 import { AntDesign, Ionicons, Feather } from "@expo/vector-icons";
+import { useState } from "react";
 
-export default function PostListItem({ post }) {
+type userTypes = {
+  id: string;
+  avatar_url: string;
+  image_url: string;
+  username: string;
+};
+type post = {
+  id: number;
+  image: string;
+  image_url: string;
+  caption: string;
+  user: userTypes;
+};
+type posts = {
+  post: post;
+};
+
+export default function PostListItem({ post }: posts) {
+  const [isHeartPressed, setIsHeartPressed] = useState<boolean>(false);
+
+  const handleLikePress = () => {
+    setIsHeartPressed((prevState) => !prevState);
+  };
   return (
     <View className="bg-white">
       {/* Header */}
@@ -16,7 +39,13 @@ export default function PostListItem({ post }) {
 
       {/* Footer */}
       <View className="flex-row gap-3 p-3">
-        <AntDesign name="hearto" size={20} />
+        <Pressable onPress={() => handleLikePress()}>
+          <AntDesign
+            name={isHeartPressed ? "heart" : "hearto"}
+            size={20}
+            color={isHeartPressed ? "red" : "black"}
+          />
+        </Pressable>
         <Ionicons name="chatbubble-outline" size={20} />
         <Feather name="send" size={20} />
 
