@@ -17,12 +17,6 @@ export default function CreatePost() {
   const user = useSelector((state: any) => state.user);
   const { posts } = useSelector((state: any) => state.posts);
 
-  useEffect(() => {
-    if (!image) {
-      pickImage();
-    }
-  }, []);
-
   const pickImage = async () => {
     // No permissions request is necessary for launching the image library
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -89,8 +83,11 @@ export default function CreatePost() {
         </View>
       )}
 
-      <Text onPress={pickImage} className="text-blue-500 font-semibold m-5">
-        Upload
+      <Text
+        onPress={pickImage}
+        className="text-blue-500 font-semibold m-5 shadow-lg"
+      >
+        Press here or on add icon to upload new image
       </Text>
 
       {/* Captions */}

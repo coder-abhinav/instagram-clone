@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   fullName: "John Doe",
   email: "johndoe@gmail.com",
-  profilePicture: "",
+  profilePicture:
+    "https://snapynow.com/wp-content/uploads/2024/05/no-dp-pic_23.webp",
   userName: "john_doe",
 };
 
