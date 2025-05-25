@@ -9,7 +9,7 @@
       "distribution": "internal"
     },
     "development": {
-      "developmentClient": true,
+      "developmentClient": false,
       "distribution": "internal"
     }
   }
