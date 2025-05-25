@@ -46,10 +46,18 @@ export default function PostListItem({ post }: posts) {
             color={isHeartPressed ? "red" : "black"}
           />
         </Pressable>
-        <Ionicons name="chatbubble-outline" size={20} />
-        <Feather name="send" size={20} />
-
-        <Feather name="bookmark" size={20} className="ml-auto" />
+        {/* disabled for now */}
+        <Ionicons name="chatbubble-outline" size={20} color="grey" />
+        <Feather name="send" size={20} color="grey" />
+        <Feather name="bookmark" size={20} className="ml-auto" color="grey" />
+      </View>
+      <View className="flex-1 flex-row pl-3 pr-2">
+        <Text>
+          <Text className="text-black font-semibold">
+            {post.user.username + " "}
+          </Text>
+          {post.caption}
+        </Text>
       </View>
     </View>
   );
