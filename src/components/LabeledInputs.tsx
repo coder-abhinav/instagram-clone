@@ -25,7 +25,7 @@ export default function TextInputs({
         value={value}
         placeholder={placeholder}
         onChangeText={setValue}
-        className="border border-gray-500 p-3 rounded-md"
+        className="border border-gray-500 p-3 rounded-md bg-slate-200"
       />
     </View>
   );

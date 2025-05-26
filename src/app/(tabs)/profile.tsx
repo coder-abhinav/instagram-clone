@@ -99,13 +99,13 @@ export default function ProfileScreen() {
 
       <Text
         onPress={pickImage}
-        className="text-blue-500 font-semibold m-5 self-center"
+        className="text-blue-500 font-semibold m-5 self-center shadow-lg"
       >
-        Change
+        Edit profile picture
       </Text>
 
       {/* Form */}
-      <View className="gap-2">
+      <View className="gap-2 bg-slate-100 p-2 rounded-lg">
         <TextInputs
           value={email}
           setValue={setEmail}
@@ -127,7 +127,7 @@ export default function ProfileScreen() {
       </View>
 
       {/* Action Buttons */}
-      <View className="gap-2 w-60 mr-auto ml-auto mt-auto ">
+      <View className="gap-2 w-full mr-auto ml-auto mt-auto p-2">
         <Button
           disabled={!isChanged}
           onPress={() => handleUpdateProfile()}
