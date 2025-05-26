@@ -47,9 +47,9 @@ export default function PostListItem({ post }: posts) {
           />
         </Pressable>
         {/* disabled for now */}
-        <Ionicons name="chatbubble-outline" size={20} color="grey" />
+        {/* <Ionicons name="chatbubble-outline" size={20} color="grey" />
         <Feather name="send" size={20} color="grey" />
-        <Feather name="bookmark" size={20} className="ml-auto" color="grey" />
+        <Feather name="bookmark" size={20} className="ml-auto" color="grey" /> */}
       </View>
       <View className="flex-1 flex-row pl-3 pr-2">
         <Text>

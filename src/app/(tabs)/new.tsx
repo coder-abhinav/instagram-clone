@@ -69,10 +69,10 @@ export default function CreatePost() {
       {image ? (
         <Image
           source={{ uri: image }}
-          className="w-full aspect-square rounded-lg shadow-lg"
+          className="w-full aspect-[4/3] rounded-lg shadow-lg"
         />
       ) : (
-        <View className="w-full aspect-square rounded-lg shadow-lg justify-center items-center bg-slate-300">
+        <View className="w-full aspect-[4/3] rounded-lg shadow-lg justify-center items-center bg-slate-300">
           <FontAwesome
             onPress={pickImage}
             name="plus-square-o"
@@ -95,7 +95,7 @@ export default function CreatePost() {
         onChangeText={(newValue) => SetCaption(newValue)}
         value={caption}
         placeholder="What's on your mind?"
-        className="w-full p-3"
+        className="w-full p-3 border-b-2 border-gray-300"
       />
 
       {/* Action Button */}
